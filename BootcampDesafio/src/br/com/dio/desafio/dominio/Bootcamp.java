@@ -49,11 +49,6 @@ public class Bootcamp {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-        result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
-        result = prime * result + ((dataInicial == null) ? 0 : dataInicial.hashCode());
-        result = prime * result + ((dataFinal == null) ? 0 : dataFinal.hashCode());
-        result = prime * result + ((devs == null) ? 0 : devs.hashCode());
-        result = prime * result + ((conteudos == null) ? 0 : conteudos.hashCode());
         return result;
     }
     @Override
@@ -70,33 +65,6 @@ public class Bootcamp {
                 return false;
         } else if (!nome.equals(other.nome))
             return false;
-        if (descricao == null) {
-            if (other.descricao != null)
-                return false;
-        } else if (!descricao.equals(other.descricao))
-            return false;
-        if (dataInicial == null) {
-            if (other.dataInicial != null)
-                return false;
-        } else if (!dataInicial.equals(other.dataInicial))
-            return false;
-        if (dataFinal == null) {
-            if (other.dataFinal != null)
-                return false;
-        } else if (!dataFinal.equals(other.dataFinal))
-            return false;
-        if (devs == null) {
-            if (other.devs != null)
-                return false;
-        } else if (!devs.equals(other.devs))
-            return false;
-        if (conteudos == null) {
-            if (other.conteudos != null)
-                return false;
-        } else if (!conteudos.equals(other.conteudos))
-            return false;
         return true;
     }
-
-    
 }
