@@ -9,9 +9,17 @@ public class Dev {
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
+    public Dev() {
+
+    }
+
+    public Dev(String nome) {
+        this.nome = nome;
+    }
+
     public void inscreverBootcamp(Bootcamp bootcamp) {
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
-        bootcamp.getDevs().add(this);
+        bootcamp.getDevsInscritos().add(this);
     }
 
     public void progredir() {
@@ -27,9 +35,9 @@ public class Dev {
 
     public double calcularTotalXp() {
         return this.conteudosConcluidos
-        .stream()
-        .mapToDouble(conteudo -> conteudo.calcularXp())
-        .sum();
+                .stream()
+                .mapToDouble(conteudo -> conteudo.calcularXp())
+                .sum();
     }
 
     public String getNome() {
